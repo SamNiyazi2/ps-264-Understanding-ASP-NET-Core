@@ -1,7 +1,4 @@
-/// <binding AfterBuild='min' />
-
-
-
+/// <binding />
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     cssmin = require('gulp-cssmin'),
