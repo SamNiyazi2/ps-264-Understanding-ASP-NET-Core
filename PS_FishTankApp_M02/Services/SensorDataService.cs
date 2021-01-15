@@ -18,7 +18,7 @@ namespace PS_FishTankApp_M02.Services
         private IEnumerable<IntHistoryModel> waterOpacityHistory;
         private IEnumerable<IntHistoryModel> lightOpacityHistory;
 
-        public IntHistoryModel GetWaterTemperaturFahrenheit()
+        public IntHistoryModel GetWaterTemperatureFahrenheit()
         {
             return GetWaterTemperatureFahrenheitHistory().Last();
         }

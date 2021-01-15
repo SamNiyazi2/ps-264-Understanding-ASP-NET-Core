@@ -11,7 +11,7 @@ namespace PS_FishTankApp_M02.Services
     public interface ISensorDataService
     {
 
-        IntHistoryModel GetWaterTemperaturFahrenheit();
+        IntHistoryModel GetWaterTemperatureFahrenheit();
 
         IEnumerable<IntHistoryModel> GetWaterTemperatureFahrenheitHistory();
 

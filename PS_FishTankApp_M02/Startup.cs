@@ -21,6 +21,10 @@ namespace PS_FishTankApp_M02
             // 01/15/2021 06:29 am - SSN - [20210115-0605] - [004] - M02-06 - The startup class
             services.AddSingleton<ISensorDataService, SensorDataService>();
 
+            // 01/15/2021 12:47 pm - SSN - [20210115-1233] - [006] - M03-04 - Unified controllers
+            services.AddSingleton<IViewModelService, ViewModelService>();
+
+
             // 01/15/2021 11:19 am - SSN - [20210115-1119] - [001] - M03-02 - Setting up MVC 6
             services.AddMvc();
 
@@ -35,7 +39,7 @@ namespace PS_FishTankApp_M02
 
 
             // 01/15/2021 12:01 pm - SSN - [20210115-1201] - [001] - M03-03 - Environment 
-            if ( env.IsDevelopment())
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
