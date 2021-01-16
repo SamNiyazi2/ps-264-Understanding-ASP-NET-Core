@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using PS_FishTankApp_M02.Services;
@@ -28,6 +31,16 @@ namespace PS_FishTankApp_M02
             // 01/15/2021 11:19 am - SSN - [20210115-1119] - [001] - M03-02 - Setting up MVC 6
             services.AddMvc();
 
+
+
+            // 01/15/2021 10:46 pm - SSN - [20210115-1311] - [001] - M03-05 - Tag Helpers
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+            services.AddSingleton<IUrlHelper>(factory =>
+            {
+                var actionContext = factory.GetService<IActionContextAccessor>()
+                                               .ActionContext;
+                return new UrlHelper(actionContext);
+            });
 
         }
 
@@ -104,7 +117,7 @@ namespace PS_FishTankApp_M02
             // app.UseStatusCodePagesWithRedirects("~/error/code{0}");
 
 
-
+            
 
         }
     }
