@@ -1,0 +1,27 @@
+﻿@model PS_FishTankApp_M02.ViewModels.SensorTileViewModel
+
+<div class="col-lg-3 col-md-6">
+    <div class="panel @Model.ColorCssClass">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-3 fa-white ">
+                    <i class="fa @Model.IconCssClass fa-5x"></i>
+                </div>
+                <div class="col-xs-9 text-right fa-white ">
+                    <div class="huge">@Model.Value</div>
+                    <div>@Model.Title</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="@Model.Url">
+            <div class="panel-footer">
+                <span class="pull-left">View Details</span>
+                <span class="pull-right">
+                    <i class="fa fa-arrow-circle-right"></i>
+                                            </span>
+                <div class="clearfix"></div>
+            </div>
+        </a>
+    </div>  
+</div>

@@ -6,11 +6,11 @@
     <title>P3159 - @ViewBag.Title</title>
 
     <environment names="Development">
-        <link asp-href-include="~/css/*.css" rel="stylesheet" />
+        <link asp-href-include="~/css_copy/*.css" rel="stylesheet" />
     </environment>
 
     <environment names="Staging,Production">
-        <link asp-href-include="~/css/min/*.css" rel="stylesheet" />
+        <link asp-href-include="~/css_min/*.css" rel="stylesheet" />
     </environment>
 
 </head>
@@ -28,11 +28,11 @@
         @RenderBody()
 
         <environment names="Development">
-            <script asp-src-include="~/js/*.js"></script>
+            <script asp-src-include="~/js_copy/*.js"></script>
         </environment>
 
         <environment names="Staging,Production">
-            <script asp-src-include="~/js/min/site.min.js"></script>
+            <script asp-src-include="~/js_min/site.min.js"></script>
         </environment>
 
     </div>

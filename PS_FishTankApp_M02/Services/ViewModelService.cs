@@ -29,8 +29,8 @@ namespace PS_FishTankApp_M02.Services
                 {
                     Title = "Water Temperature",
                     Value = sensorDataService.GetWaterTemperatureFahrenheit().Value,
-                    ColorCssClass = "panel-primary",
-                    IconCssClass = "fa-sliders",
+                    ColorCssClass = "panel-blue",
+                    IconCssClass = "fa-sliders-h ",
                     Url = urlHelper.Action("GetWaterTemeratureChart", "History")
                 }
 ,
@@ -57,7 +57,7 @@ namespace PS_FishTankApp_M02.Services
                     Title = "Light Intensity",
                     Value = sensorDataService.GetLightIntencityLumens().Value,
                     ColorCssClass = "panel-red",
-                    IconCssClass = "fa-lightbulb-o",
+                    IconCssClass = "fa-lightbulb",
                     Url = urlHelper.Action("GetLightIntencityLumensChart", "History")
                 }
 

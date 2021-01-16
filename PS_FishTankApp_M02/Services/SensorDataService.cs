@@ -82,7 +82,7 @@ namespace PS_FishTankApp_M02.Services
 
             for (var i = -10; i < 1; i++)
             {
-                result.Add(new IntHistoryModel(DateTime.Now.AddHours(1), random.Next(000000000000000000000000000000000000000)));
+                result.Add(new IntHistoryModel(DateTime.Now.AddHours(1), random.Next(min, max)));
             }
 
             return result;

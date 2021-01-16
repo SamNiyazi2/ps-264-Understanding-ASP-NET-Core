@@ -28,5 +28,16 @@ namespace PS_FishTankApp_M02.Controllers
             ViewBag.Title = "Fish Tank Dashboard";
             return View(viewModelService.GetDashboardViewModel());
         }
+
+
+        // 01/16/2021 03:53 am - SSN - [20210116-0006] - [002] - M03-06 - More tag helpers 
+        public IActionResult Feed(int foodAmount)
+        {
+            var model = viewModelService.GetDashboardViewModel();
+            model.LastFed = $"{DateTime.Now.ToString("h:mm tt").ToLower()}. -- Amount: {foodAmount}";
+            return View("index", model);
+        }
+
+
     }
 }

@@ -260,6 +260,9 @@ paket-files/
 __pycache__/
 *.pyc
 /PS_FishTankApp_M02/morris.js-0.5.1
-/PS_FishTankApp_M02/wwwroot/fonts
-/PS_FishTankApp_M02/wwwroot/js
-/PS_FishTankApp_M02/wwwroot/css
+/PS_FishTankApp_M02/wwwroot/webfonts
+/PS_FishTankApp_M02/wwwroot/js_copy
+/PS_FishTankApp_M02/wwwroot/js_min
+/PS_FishTankApp_M02/wwwroot/css_copy
+/PS_FishTankApp_M02/wwwroot/css_min
+/PS_FishTankApp_M02/wwwroot/bootstrap-3.4.1-dist
