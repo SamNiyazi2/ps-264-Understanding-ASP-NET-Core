@@ -17,55 +17,57 @@
         @Html.DisplayFor(m => m.LightIntensityTile)
     </div>
 
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="row">
 
-                        <form asp-controller="home" asp-action="feed" method="post">
+    <div class="col-lg-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="row">
 
-
-
-
-                            <div class="col-lg-7">
-
-                                <label asp-for="FoodAmount"></label>
-
-                                <span class="small">
-                                    <label asp-for="LastFed"></label>
-                                    @Model.LastFed
-                                </span>
-
-                            </div>
+                    <form asp-controller="home" asp-action="feed" method="post">
 
 
 
 
-                            <div class="col-lg-2">
-                                <input type="number" asp-for="FoodAmount" class="form-control " min="0" max="10" />
-                            </div>
+                        <div class="col-lg-7">
+
+                            <label asp-for="FoodAmount"></label>
+
+                            <span class="small">
+                                <label asp-for="LastFed"></label>
+                                @Model.LastFed
+                            </span>
+
+                        </div>
 
 
-                            <div class="xcol-lg-3">
 
-                                <span class="center">
 
-                                    <button type="submit" class="btn btn-primary input-lg" style="width:100px">
-                                        Feed!
-                                    </button>
+                        <div class="col-lg-2">
+                            <input type="number" asp-for="FoodAmount" class="form-control " min="0" max="10" />
+                        </div>
 
-                                </span>
 
-                            </div>
+                        <div class="xcol-lg-3">
 
-                        </form>
+                            <span class="center">
 
-                    </div>
+                                <button type="submit" class="btn btn-primary input-lg" style="width:100px">
+                                    Feed!
+                                </button>
+
+                            </span>
+
+                        </div>
+
+                    </form>
+
                 </div>
             </div>
-
         </div>
 
     </div>
+
+
+    @await Component.InvokeAsync("Alert")
+
 </div>
