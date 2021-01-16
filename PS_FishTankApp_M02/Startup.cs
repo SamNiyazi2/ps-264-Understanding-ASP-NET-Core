@@ -8,18 +8,46 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using PS_FishTankApp_M02.Options;
 using PS_FishTankApp_M02.Services;
 
 namespace PS_FishTankApp_M02
 {
     public class Startup
     {
+        // 01/16/2021 02:54 pm - SSN - [20210116-1432] - [003] - M03-08 - Application settings
+
+        public IHostingEnvironment Env { get; }
+
+        public Startup(IHostingEnvironment env)
+        {
+            Env = env;
+        }
+
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // 01/16/2021 02:51 pm - SSN - [20210116-1432] - [002] - M03-08 - Application settings
+
+            var configBuilder = new ConfigurationBuilder();
+
+            configBuilder
+                .AddJsonFile("AlertThresholds.json")
+                .AddJsonFile($"AlertThresholds{Env.EnvironmentName}.json", optional: true);
+
+            IConfigurationRoot config = configBuilder.Build();
+
+            services.Configure<ThresholdOptions>(config);
+
+
+
+
 
             // 01/15/2021 06:29 am - SSN - [20210115-0605] - [004] - M02-06 - The startup class
             // services.AddSingleton<ISensorDataService, SensorDataService>();
@@ -33,7 +61,7 @@ namespace PS_FishTankApp_M02
             // 01/15/2021 11:19 am - SSN - [20210115-1119] - [001] - M03-02 - Setting up MVC 6
             services.AddMvc();
 
-          
+
 
             // 01/15/2021 10:46 pm - SSN - [20210115-1311] - [001] - M03-05 - Tag Helpers
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
