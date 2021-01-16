@@ -37,7 +37,7 @@ namespace PS_FishTankApp_M02.Services
 
         public IEnumerable<IntHistoryModel> GetFishMotionPercentageHistory()
         {
-            return fishMotionHistory ?? (fishMotionHistory = GetHistory(70, 90));
+            return fishMotionHistory ?? (fishMotionHistory = GetHistory(0, 100));
         }
 
 
@@ -49,7 +49,7 @@ namespace PS_FishTankApp_M02.Services
 
         public IEnumerable<IntHistoryModel> GetWaterOpacityPercentageHistory()
         {
-            return waterOpacityHistory ?? (waterOpacityHistory = GetHistory(70, 90));
+            return waterOpacityHistory ?? (waterOpacityHistory = GetHistory(0, 90));
         }
 
 
@@ -61,7 +61,7 @@ namespace PS_FishTankApp_M02.Services
 
 
 
-        public IntHistoryModel GetLightIntencityLumens()
+        public IntHistoryModel GetLightIntensityLumens()
         {
             return GetLightIntensityLumensHistory().Last();
         }
@@ -82,7 +82,7 @@ namespace PS_FishTankApp_M02.Services
 
             for (var i = -10; i < 1; i++)
             {
-                result.Add(new IntHistoryModel(DateTime.Now.AddHours(1), random.Next(min, max)));
+                result.Add(new IntHistoryModel(DateTime.Now.AddHours(i), random.Next(min, max)));
             }
 
             return result;

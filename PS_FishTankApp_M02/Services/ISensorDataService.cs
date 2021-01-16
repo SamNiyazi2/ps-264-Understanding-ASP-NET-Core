@@ -24,7 +24,7 @@ namespace PS_FishTankApp_M02.Services
 
         IEnumerable<IntHistoryModel> GetWaterOpacityPercentageHistory();
 
-        IntHistoryModel GetLightIntencityLumens();
+        IntHistoryModel GetLightIntensityLumens();
 
         IEnumerable<IntHistoryModel> GetLightIntensityLumensHistory();
 

@@ -11,7 +11,6 @@ var paths = {
     webroot: './wwwroot/'
 };
 
-//paths.bootstrapCss1 = "./node_modules/bootstrap/dist/css/bootstrap.css";
 paths.bootstrapCss2a = "./wwwroot/bootstrap-3.4.1-dist/css/bootstrap.css";
 paths.bootstrapCss2b = "./wwwroot/bootstrap-3.4.1-dist/css/bootstrap-theme.css";
 
@@ -22,13 +21,8 @@ paths.morrisCss = "./morris.js-0.5.1/morris.js-0.5.1/morris.css";
 paths.siteCss = "./wwwroot/css_custom/site.css";
 
 paths.jqueryJs = "./node_modules/jquery/dist/jquery.js";
-paths.raphaelJs_1 = "./node_modules/michaelangelo/lib/arc.js";
-paths.raphaelJs_2 = "./node_modules/michaelangelo/lib/baseElement.js";
-paths.raphaelJs_3 = "./node_modules/michaelangelo/lib/circle.js";
-paths.raphaelJs_4 = "./node_modules/michaelangelo/lib/ellipse.js";
-paths.raphaelJs_5 = "./node_modules/michaelangelo/lib/path.js";
-paths.raphaelJs_6 = "./node_modules/michaelangelo/lib/rectangle.js";
 
+paths.raphaelJs_M = "./node_modules/raphael/raphael.js";
 paths.morrisJs = "./morris.js-0.5.1/morris.js-0.5.1/morris.js";
 
 paths.fonts = "./node_modules/@fortawesome/fontawesome-free/webfonts/*";
@@ -48,12 +42,7 @@ gulp.task("min:js", function () {
 
     return gulp.src([
         paths.jqueryJs,
-        paths.raphaelJs_1,
-        paths.raphaelJs_2,
-        paths.raphaelJs_3,
-        paths.raphaelJs_4,
-        paths.raphaelJs_5,
-        paths.raphaelJs_6,
+        paths.raphaelJs_M,
         paths.morrisJs])
         .pipe(concat(paths.jsDest_min + "/site.min.js"))
         .pipe(uglify())
@@ -67,12 +56,7 @@ gulp.task("copy:js", function () {
 
     return gulp.src([
         paths.jqueryJs,
-        paths.raphaelJs_1,
-        paths.raphaelJs_2,
-        paths.raphaelJs_3,
-        paths.raphaelJs_4,
-        paths.raphaelJs_5,
-        paths.raphaelJs_6,
+        paths.raphaelJs_M,
         paths.morrisJs])
         .pipe(gulp.dest(paths.jsDest_copy));
 
@@ -86,7 +70,6 @@ gulp.task("copy:js", function () {
 gulp.task("min:css", function () {
 
     return gulp.src([
-//        paths.bootstrapCss1,
         paths.bootstrapCss2a,
         paths.bootstrapCss2b,
         paths.sbAdminCss,
@@ -105,7 +88,6 @@ gulp.task("min:css", function () {
 gulp.task("copy:css", function () {
 
     return gulp.src([
-//        paths.bootstrapCss1,
         paths.bootstrapCss2a,
         paths.bootstrapCss2b,
         paths.sbAdminCss,

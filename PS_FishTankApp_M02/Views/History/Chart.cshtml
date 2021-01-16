@@ -1,0 +1,58 @@
+﻿@model PS_FishTankApp_M02.ViewModels.ChartViewModel
+
+@{ 
+    ViewBag.Title = $"Fish Tank - {Model.Title} Chart";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">@Model.Title</div>
+
+                <div class="panel pandel-body">
+                    <div id="chart"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+
+
+    <script>
+
+
+    $(function () {
+
+
+        let baseUrl = document.location.origin;
+     
+
+
+        $.getJSON("@Model.DataUrl", function (data) {
+            
+
+            Morris.Line({
+                element: 'chart',
+                data: data,
+                xkey: 'timeStamp',
+                ykeys: ['value'],
+                labels: ['value'],
+                resize: true,
+                dateFormat: function (d) {
+                    var date = new Date(d);
+                    return date.getHours() + ":" + date.getMinutes();
+                }
+            })
+        });
+    });
+         
+    </script>
+
+}

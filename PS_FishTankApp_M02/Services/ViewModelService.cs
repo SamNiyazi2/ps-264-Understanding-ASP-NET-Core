@@ -31,7 +31,7 @@ namespace PS_FishTankApp_M02.Services
                     Value = sensorDataService.GetWaterTemperatureFahrenheit().Value,
                     ColorCssClass = "panel-blue",
                     IconCssClass = "fa-sliders-h ",
-                    Url = urlHelper.Action("GetWaterTemeratureChart", "History")
+                    Url = urlHelper.Action("GetWaterTemperatureChart", "History")
                 }
 ,
                 FishMotionTile = new SensorTileViewModel
@@ -49,16 +49,16 @@ namespace PS_FishTankApp_M02.Services
                     Value = sensorDataService.GetWaterOpacityPercentage().Value,
                     ColorCssClass = "panel-yellow",
                     IconCssClass = "fa-adjust",
-                    Url = urlHelper.Action("GetWaterOpacityTileChart", "History")
+                    Url = urlHelper.Action("GetWaterOpacityPercentageChart", "History")
                 },
 
                 LightIntensityTile = new SensorTileViewModel
                 {
                     Title = "Light Intensity",
-                    Value = sensorDataService.GetLightIntencityLumens().Value,
+                    Value = sensorDataService.GetLightIntensityLumens().Value,
                     ColorCssClass = "panel-red",
                     IconCssClass = "fa-lightbulb",
-                    Url = urlHelper.Action("GetLightIntencityLumensChart", "History")
+                    Url = urlHelper.Action("GetLightIntensityLumensChart", "History")
                 }
 
             };

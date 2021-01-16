@@ -27,14 +27,20 @@
 
         @RenderBody()
 
-        <environment names="Development">
-            <script asp-src-include="~/js_copy/*.js"></script>
-        </environment>
-
-        <environment names="Staging,Production">
-            <script asp-src-include="~/js_min/site.min.js"></script>
-        </environment>
-
     </div>
+
+
+    <environment names="Development">
+        <script asp-src-include="~/js_copy/*.js"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script asp-src-include="~/js_min/site.min.js"></script>
+    </environment>
+
+
+    @RenderSection("Scripts", required: false)
+
+
 </body>
 </html>
