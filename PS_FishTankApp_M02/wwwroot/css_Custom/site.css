@@ -1,0 +1,50 @@
+﻿:root {
+    font-size: 12pt;
+}
+
+.panel-blue {
+    background-color: #4768e8;
+}
+
+.fa-white {
+    color: white;
+}
+
+.panel-green {
+    background-color: #83b875
+}
+
+.panel-red {
+    background-color: #f16479;
+}
+
+
+.panel-yellow {
+    background-color: #daa76b;
+}
+
+.huge {
+    font-size: 24pt;
+}
+
+.container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#mainImg{
+    width: 80%;
+}
+
+@media only screen and (max-width:360px) {
+
+    #mainImg {
+        width: 240px;
+        margin:auto;
+    }
+
+    :root {
+        font-size: 10pt;
+    }
+
+}

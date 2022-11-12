@@ -1,0 +1,10 @@
+{
+  "WaterTemperatureMin": 75,
+  "WaterTemperatureMax": 85,
+  "FishMotionMin": 30,
+  "FishMotionMax": 90,
+  "WaterOpacityMin": 0,
+  "WaterOpacityMax": 50,
+  "LightIntensityMin": 0,
+  "LightIntensityMax": 4000
+}
